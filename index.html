@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#315b42">
+  <meta name="description" content="첫 수확을 위한 작은 안내서. 아그리콜라의 게임 준비부터 진행, 점수까지 한눈에 만나보세요.">
+  <title>아그리콜라 — 농부의 안내서</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232d503e'/%3E%3Cpath d='M32 50V17m0 13c-13 0-13-12-13-12 12 0 13 12 13 12Zm0 10c13 0 13-12 13-12-12 0-13 12-13 12Zm0-18c10-1 10-11 10-11-10 1-10 11-10 11Z' fill='%23e8d6a4' stroke='%23e8d6a4' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/Galmuri11-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-wheat" viewBox="0 0 16 16"><path d="M8 15V2M8 6H5V3H3v3h2v2h3m0 2h3V7h2v3h-2v2H8m0 2H5v-3H3v3h2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 3v2h2v2h2v2h-2v2H9v2"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 16 16"><path d="M5 2v2h2v2h2v4H7v2H5v2"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 16 16"><path d="M4 2h8v12h-2v-2H6v2H4Z"/></symbol>
+<symbol id="i-home" viewBox="0 0 16 16"><path d="M2 7h2V5h2V3h4v2h2v2h2M4 7v7h8V7M7 14v-4h2v4"/></symbol>
+<symbol id="i-grid" viewBox="0 0 16 16"><path d="M2 2h4v4H2Zm8 0h4v4h-4ZM2 10h4v4H2Zm8 0h4v4h-4Z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 16 16"><path d="M3 12V6h3V3h8v6h-3v3ZM2 14l9-9"/></symbol>
+<symbol id="i-flag" viewBox="0 0 16 16"><path d="M3 15V2h5v2h5v6H8V8H3"/></symbol>
+<symbol id="i-people" viewBox="0 0 16 16"><path d="M4 2h4v4H4Zm-2 12V9h8v5m1-11h3v4h-3m1 3h3v4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 16 16"><path d="M5 1h6v2h2v2h2v6h-2v2h-2v2H5v-2H3v-2H1V5h2V3h2ZM8 4v4h3"/></symbol>
+<symbol id="i-check" viewBox="0 0 16 16"><path d="M2 8h2v2h2v2h2V9h2V6h2V3h2"/></symbol>
+<symbol id="i-book" viewBox="0 0 16 16"><path d="M8 3H2v10h4v1h4v-1h4V3H8Zm0 0v10"/></symbol>
+<symbol id="i-sun" viewBox="0 0 16 16"><path d="M6 5h4v6H6ZM1 8h2m10 0h2M8 1v2m0 10v2M2 2l2 2m8 8 2 2M2 14l2-2m8-8 2-2"/></symbol>
+<symbol id="i-close" viewBox="0 0 16 16"><path d="M3 3l10 10M3 13 13 3"/></symbol>
+<symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></symbol>
+<symbol id="i-barn" viewBox="0 0 16 16"><path d="M1 7h2V5h2V3h2V1h2v2h2v2h2v2h2M3 7v8h10V7M6 15V9h4v6M6 9l4 6m0-6-4 6"/></symbol>
+<symbol id="i-fields" viewBox="0 0 16 16"><path d="M1 10h14v5H1Zm3 0v5m4-5v5m4-5v5M8 8V2m0 3H5V2H3v3h2v2h3m0-3h3V1h2v3h-2v2H8"/></symbol>
+<symbol id="i-family" viewBox="0 0 16 16"><path d="M3 1h4v4H3ZM1 15V8h8v7M3 10v5m4-5v5m4-12h3v3h-3m-1 9V9h5v6"/></symbol>
+<symbol id="i-sheep" viewBox="0 0 16 16"><path d="M3 4h7v2h3v6H2V6h1Zm0 8v3m6-3v3m3-9h3v4h-3m1-4V4"/></symbol>
+</defs></svg>
+<div class="app-shell">
+  <main id="main" tabindex="-1"></main>
+  <nav class="bottom-nav" aria-label="주요 메뉴">
+    <a href="#setup" data-nav="setup"><svg><use href="#i-grid"/></svg><span>준비 미션</span></a>
+    <a href="#home" data-nav="home"><svg><use href="#i-home"/></svg><span>퀘스트</span></a>
+    <a href="#play" data-nav="play"><svg><use href="#i-leaf"/></svg><span>라운드</span></a>
+    <a href="#score" data-nav="score"><svg><use href="#i-flag"/></svg><span>결과</span></a>
+  </nav>
+</div>
+<dialog id="saved-dialog" aria-labelledby="saved-title"><div class="sheet-handle"></div><div class="sheet-heading"><div><p class="eyebrow">SAVED QUESTS</p><h2 id="saved-title">저장한 퀘스트</h2></div><button class="icon-button close-dialog" aria-label="닫기"><svg><use href="#i-close"/></svg></button></div><div id="saved-content"></div><p class="sheet-footnote">이 기기에서 다시 찾아볼 수 있어요.</p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
